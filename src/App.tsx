@@ -28,10 +28,13 @@ function App() {
           <Route path='/about' element={<HomePage/>} />
           <Route path='/projects' element={<HomePage/>} />
           <Route path='/contact' element={<HomePage/>} />
+
           <Route path='/covid-project' element={<Portal/>} />
           <Route path='/covid-project/patients' element={<HealthRecords/>} />
           <Route path='/covid-project/vaccines' element={<HealthRecords/>} />
+
           <Route path='/digikey-api' element={<Categories/>} />
+          
           <Route path='/pcpartpicker' element={<UserPicks/>}></Route>
           <Route path='/pcpartpicker/cpu' element={<CpuOptions/>}></Route>
           <Route path='/pcpartpicker/motherboard' element={<MotherboardOptions/>}></Route>

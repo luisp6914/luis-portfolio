@@ -1,0 +1,88 @@
+name: Deploy Portfolio Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    env:
+      VITE_ADD_CASE_URL: ${{ secrets.VITE_ADD_CASE_URL }}
+      VITE_ADD_CPU_URL: ${{ secrets.VITE_ADD_CPU_URL }}
+      VITE_ADD_DOSES_URL: ${{ secrets.VITE_ADD_DOSES_URL }}
+      VITE_ADD_GPU_URL: ${{ secrets.VITE_ADD_GPU_URL }}
+      VITE_ADD_MEMORY_URL: ${{ secrets.VITE_ADD_MEMORY_URL }}
+      VITE_ADD_MONITOR_URL: ${{ secrets.VITE_ADD_MONITOR_URL }}
+      VITE_ADD_MOTHERBOARD_URL: ${{ secrets.VITE_ADD_MOTHERBOARD_URL }}
+      VITE_ADD_PATIENT_URL: ${{ secrets.VITE_ADD_PATIENT_URL }}
+      VITE_ADD_PSU_URL: ${{ secrets.VITE_ADD_PSU_URL }}
+      VITE_ADD_SECOND_DOSE_URL: ${{ secrets.VITE_ADD_SECOND_DOSE_URL }}
+      VITE_ADD_STORAGE_URL: ${{ secrets.VITE_ADD_STORAGE_URL }}
+      VITE_ADD_VACCINE_URL: ${{ secrets.VITE_ADD_VACCINE_URL }}
+      VITE_ALL_CASES_URL: ${{ secrets.VITE_ALL_CASES_URL }}
+      VITE_ALL_CPUS_URL: ${{ secrets.VITE_ALL_CPUS_URL }}
+      VITE_ALL_GPU_URL: ${{ secrets.VITE_ALL_GPU_URL }}
+      VITE_ALL_MEMORY_URL: ${{ secrets.VITE_ALL_MEMORY_URL }}
+      VITE_ALL_MONITORS_URL: ${{ secrets.VITE_ALL_MONITORS_URL }}
+      VITE_ALL_MOTHERBOARDS_URL: ${{ secrets.VITE_ALL_MOTHERBOARDS_URL }}
+      VITE_ALL_PATIENTS_URL: ${{ secrets.VITE_ALL_PATIENTS_URL }}
+      VITE_ALL_PSUS_URL: ${{ secrets.VITE_ALL_PSUS_URL }}
+      VITE_ALL_STORAGE_URL: ${{ secrets.VITE_ALL_STORAGE_URL }}
+      VITE_ALL_VACCINES_URL: ${{ secrets.VITE_ALL_VACCINES_URL }}
+      VITE_DIGIKEY_API_BASE_URL: ${{ secrets.VITE_DIGIKEY_API_BASE_URL }}
+      VITE_DIGIKEY_CLIENT_ID: ${{ secrets.VITE_DIGIKEY_CLIENT_ID }}
+      VITE_DIGIKEY_CLIENT_SECRET: ${{ secrets.VITE_DIGIKEY_CLIENT_SECRET }}
+      VITE_EDIT_VACCINE_URL: ${{ secrets.VITE_EDIT_VACCINE_URL }}
+      VITE_FIND_PATIENT_BY_ID_URL: ${{ secrets.VITE_FIND_PATIENT_BY_ID_URL }}
+      VITE_FIND_VACCINE_BY_ID_URL: ${{ secrets.VITE_FIND_VACCINE_BY_ID_URL }}
+      VITE_UPDATE_CASE_URL: ${{ secrets.VITE_UPDATE_CASE_URL }}
+      VITE_UPDATE_CPU_URL: ${{ secrets.VITE_UPDATE_CPU_URL }}
+      VITE_UPDATE_GPU_URL: ${{ secrets.VITE_UPDATE_GPU_URL }}
+      VITE_UPDATE_MEMORY_URL: ${{ secrets.VITE_UPDATE_MEMORY_URL }}
+      VITE_UPDATE_MONITOR_URL: ${{ secrets.VITE_UPDATE_MONITOR_URL }}
+      VITE_UPDATE_MOTHERBOARD_URL: ${{ secrets.VITE_UPDATE_MOTHERBOARD_URL }}
+      VITE_UPDATE_PSU_URL: ${{ secrets.VITE_UPDATE_PSU_URL }}
+      VITE_UPDATE_STORAGE_URL: ${{ secrets.VITE_UPDATE_STORAGE_URL }}
+      VITE_UPDATE_VALUE: ${{ secrets.VITE_UPDATE_VALUE }}
+      VITE_USER_PICKS_URL: ${{ secrets.VITE_USER_PICKS_URL }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
