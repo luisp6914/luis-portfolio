@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+/*---------User pick container---------*/
+.user-picks-container, .cpu-options, .motherboard-options, .case-options, .gpu-options, .ram-options, .monitor-options, .psu-options, .storage-options{
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+}
+/*---------User Table and pc part tables---------*/
+.user-picks-table td, .user-picks-table th, .cpu-options .table td, .cpu-options .table th, .motherboard-options .table th, .motherboard-options .table td,
+.ram-options .table td, .ram-options .table th, .storage-options .table th, .storage-options .table td, .gpu-options .table th, .gpu-options .table td,
+.case-options .table th, .case-options .table td, .psu-options .table th, .psu-options .table td, .monitor-options .table th, .monitor-options .table td{
+    padding: 1rem .75rem;
+    font-weight: 500;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.title, .cpu-options h1, .motherboard-options h1, .case-options h1, .gpu-options h1, .ram-options h1, .monitor-options h1, .psu-options h1, .storage-options h1{
+    margin-top: 6rem;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: bold;
+
+    background-color: black;
+    color: white;
+    /* background: linear-gradient(180deg, #7F7FD5, #91EAE4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    text-align: center;
+    margin-bottom: 2rem;    
+}
+
+.user-picks-container .btn-close:hover{
+    filter: invert(28%) sepia(96%) saturate(7270%) hue-rotate(357deg) brightness(97%) contrast(106%) !important;
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+
+/*---------Loading Icon---------*/
+.loading-container{
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+    height: 100dvh;
+    width: 100%;
+}
+.loading{
+    justify-content: center;
+    align-items: center !important;
+    width: 80px;
+    height: 80px;
+}
+
+
+/*---------Laptop Views---------*/
+@media only screen and (min-width: 992px) and (max-width: 1199.99px){
+    /*---------User Table and pc part tables---------*/
+    
+}
+
+/*---------Tablet Views---------*/
+@media only screen and (min-width: 768px) and (max-width: 991.99px){
+    /*---------t---------*/
+    
+}
+
+/*---------Mobile Views---------*/
+@media only screen and (max-width: 767.99px){
+    /*---------t---------*/
+    .user-picks-table thead, .case-options .table thead, .cpu-options .table thead,
+    .motherboard-options .table thead, .ram-options .table thead, .storage-options .table thead,
+    .gpu-options .table thead, .psu-options .table thead, .monitor-options .table thead{
+        display: none;
+    }
+
+    .user-picks-table,
+    .user-picks-table tbody,
+    .user-picks-table tr,
+    .user-picks-table td,
+    
+    .case-options .table,
+    .case-options .table tbody,
+    .case-options .table tr,
+    .case-options .table td,
+    
+    .cpu-options .table,
+    .cpu-options .table tbody,
+    .cpu-options .table tr,
+    .cpu-options .table td,
+    
+    .motherboard-options .table,
+    .motherboard-options .table tbody,
+    .motherboard-options .table tr,
+    .motherboard-options .table td,
+    
+    .ram-options .table,
+    .ram-options .table tbody,
+    .ram-options .table tr,
+    .ram-options .table td,
+    
+    .storage-options .table,
+    .storage-options .table tbody,
+    .storage-options .table tr,
+    .storage-options .table td,
+    
+    .gpu-options .table,
+    .gpu-options .table tbody,
+    .gpu-options .table tr,
+    .gpu-options .table td,
+    
+    .psu-options .table,
+    .psu-options .table tbody,
+    .psu-options .table tr,
+    .psu-options .table td,
+    
+    .monitor-options .table,
+    .monitor-options .table tbody,
+    .monitor-options .table tr,
+    .monitor-options .table td{
+        display: block;
+        width: 100%;
+    }
+
+    .user-picks-table tr, .case-options .table tr, .cpu-options .table tr,
+    .motherboard-options .table tr, .ram-options .table tr, .storage-options .table tr,
+    .gpu-options .table tr, .psu-options .table tr, .monitor-options .table tr{
+        margin-bottom: 1rem;
+        border: 1px solid transparent;
+        border-radius: .5rem;
+        padding: .5rem;
+        background-color: #f8f9fa;
+        background: 
+            linear-gradient(#fff, #fff) padding-box,
+            linear-gradient(180deg, #7F7FD5, #91EAE4);
+    }
+
+    .user-picks-table td, .case-options .table td, .cpu-options .table td,
+    .motherboard-options .table td, .ram-options .table td, .storage-options .table td,
+    .gpu-options .table td, .psu-options .table td, .monitor-options .table td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .user-picks-table td::before, .case-options .table td::before, .cpu-options .table td::before,
+    .motherboard-options .table td::before, .ram-options .table td::before, .storage-options .table td::before,
+    .gpu-options .table td::before, .psu-options .table td::before, .monitor-options .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .user-picks-table td:last-child, .case-options .table td:last-child, .cpu-options .table td:last-child,
+    .motherboard-options .table td:last-child, .ram-options .table td:last-child, .storage-options .table td:last-child,
+    .gpu-options .table td:last-child, .psu-options .table td:last-child, .monitor-options .table td:last-child{
+        border-bottom: none;
+    }
+
+    .user-picks-container .btn-close{
+        filter: invert(28%) sepia(96%) saturate(7270%) hue-rotate(357deg) brightness(97%) contrast(106%);
+    }
+}

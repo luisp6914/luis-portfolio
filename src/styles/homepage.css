@@ -1,0 +1,343 @@
+
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+/*Navbar section*/
+.nav-link {
+    color: #000;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nav-link.active {
+    border-bottom: solid 3px #0D6EFD;
+    transition: transform 10s ease
+}
+
+/*The home section background img set up*/
+.background-img{
+    height: 100dvh;
+    width: 100%;
+    background-image: url("/bg1.jpg");
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; /* Centers content vertically */
+    align-items: center;     /* Centers content horizontally */
+    text-align: center;      /* Centers text within each flex item */
+}
+/*Home section text css*/
+.background-img h1{
+    font-size: 10.5dvw;
+    margin-top: 5.5dvh;
+}
+.background-img p, .background-img span{
+    font-size: 4.5dvw;
+}
+.text-container{
+    display: flex;
+    flex-direction: row;
+}
+
+/*About me section*/
+.about-me{
+    margin: 15dvh 0dvw 4dvh 0dvw;
+    padding: 4rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.img-me{
+    border: none;
+    
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+}
+.paragraph{
+    margin-top: 15px;
+}
+.paragraph p{
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.paragraph h3{
+    position: relative;
+    display: inline-block;
+}
+.paragraph h3::after {
+    content: ''; 
+    position: absolute; /* Positions relative to the h3 */
+    left: 0; /* Starts from the left edge of the h3 */
+    bottom: 0; /* Aligns to the bottom of the h3 */
+    width: 50%; /* Set this to control the width of the underline */
+    height: 3px; /* Thickness of the underline */
+    background-color: #0D6EFD; /* Color of the underline */
+}
+
+/*Pie Chart*/
+.pie-chart-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 2rem;
+}
+
+.pie-chart{
+    flex: 1 1 auto;
+    max-width: 600px;
+}
+
+.custom-legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding-left: 1rem;
+    height: 100%;
+  }
+  
+  .custom-legend ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .custom-legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+/*Footer section*/
+.fa-square-github:hover{
+    color: #6f42c1 !important;
+}
+.fa-linkedin:hover{
+    color: #0A66C2 !important;
+}
+
+/*Projects section*/
+#projects{
+    margin-top: 5rem;
+}
+.projects{
+    justify-content: center;
+    padding: 10px;
+    gap: 45px;
+}
+#projects h1{
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+}
+.project{
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); /* Add initial shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+}
+.project:hover {
+    transform: translateY(-10px); /* Slightly lift the card */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6); /* Increase shadow on hover */
+}
+.card-body{
+    padding: 0px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card-body a{
+    width: 100%;
+}
+/* .covidProject{
+    color: #007bff;
+}
+.fa-money-bill-trend-up{
+    color: #28a745;
+}
+.fa-computer{
+    color: #6c757d;
+}
+.fa-vector-square{
+    color: #6f42c1;
+}
+.fa-cloud{
+    color: #e36209;
+} */
+/* Styles for the horizontal ribbon */
+.ribbon {
+    position: absolute;
+    top: 0;
+    right: -14px;
+    width: 150px;
+    background-color: #283593;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.ribbon span {
+    display: block;
+}
+
+/*Setting the Text inside the cloud icon*/
+.icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon-container .fa-icon {
+    font-size: 55px;
+}
+
+/* .icon-container.dijiKeyAPI::after {
+    content: 'API';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px; 
+    font-weight: bold;
+    color: white; 
+    text-align: center;
+    pointer-events: none;
+} */
+ 
+/*Fading in the projects*/
+.fade-in{
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.fade-in.visible{
+    animation: fadeIn 1s forwards;
+}
+
+/*Contact section*/
+#contact{
+    margin-top: 10rem;
+    margin-bottom: 4rem;
+}
+.contact{
+    padding: 3rem;
+    background-color: #f2f2f2;
+}
+.contact h2{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+.contact h2::after{
+    content: ''; /* Necessary for the pseudo-element to appear */
+    position: absolute; /* Positions relative to the h3 */
+    left: 0; /* Starts from the left edge of the h3 */
+    bottom: 0; /* Aligns to the bottom of the h3 */
+    width: 50%; /* Set this to control the width of the underline */
+    height: 3px; /* Thickness of the underline */
+    background-color: #0D6EFD; /* Color of the underline */
+}
+.connectMe p{
+    font-size: 18px;
+}
+.formBox{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Media query for screens 992px and wider */
+@media (min-width: 992px) {
+    /*Home Section CSS*/
+    .background-img {
+        justify-content: flex-end;
+        
+    }
+    .background-img h1{
+        font-size: 5.5dvw;
+    }
+    .background-img p, .background-img span{
+        font-size: 2.5dvw;
+        margin-bottom: 9.5dvh;
+    }
+
+    /*Contact section*/
+    .contact {
+        display: flex;
+        flex-direction: row;
+        gap: 10rem;
+    }
+    .connectMe, .messageMe{
+        flex: 1;
+    }
+}
+
+/* Media query for screens 991px and smaller(width) */
+@media (max-width: 991px) {
+    .about-me{
+        flex-direction: column;
+    }
+   .messageMe{
+        margin-top: 3rem;
+   }
+   .profile{
+        display: block;
+   } 
+   .profile .info{
+        margin-top: 2rem;
+   }
+
+   .pie-chart-container {
+    flex-direction: column;
+    align-items: center !important;
+    gap: 2rem;
+  }
+
+  .pie-chart{
+    max-width: 400px !important;
+    width: 100%;
+  }
+  .custom-legend {
+    padding-left: 0;
+    justify-content: center !important;
+  }
+
+  .custom-legend ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center !important;
+  }
+
+  .custom-legend li {
+    justify-content: center !important;
+  }
+}
+
+
+/*Animations*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,118 @@
+/*Bigger Screens*/
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+/*---------Portal---------*/
+.portal-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.card{
+    width: 550px;
+    height: 650px;
+    background-color: #f7f7f7;
+}
+.portal-icon{
+    width: 80px;
+    height: 80px;
+}
+.btn-text{
+    font-size: 18px;
+}
+.portal-text{
+    margin-top: 16px;
+}
+/*---------Health Records---------*/
+.widget-buttons{
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
+    margin-right: 2rem;
+}
+.add-patient-btn, .add-dose-btn, .add-vaccine-btn, .edit-btn{
+    width: 10rem;
+}
+.add-dose-btn:hover, .addSecondDoseBtn:hover{
+    background-color: rgb(219, 143, 0) !important;
+}
+.patient-vaccine-table{
+    margin: 4rem;
+}
+.patient-table th, .patient-table td, .vaccine-table th, .vaccine-table td{
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.addSecondDoseBtn, .finished-icon{
+    width: 150px;
+    height: 35px;
+}
+
+
+
+/*---------Laptop Views---------*/
+@media only screen and (min-width: 992px) and (max-width: 1199.99px){
+    /*---------Portal---------*/
+    .portal-container{
+        margin-top: 8rem !important;
+        margin-bottom: 6rem !important;
+    }
+    .card{
+        width: 475px;
+        height: 600px;
+    }
+}
+
+/*---------Tablet Views---------*/
+@media only screen and (min-width: 768px) and (max-width: 991.99px){
+    /*---------Portal---------*/
+    .portal-container{
+        margin-top: 8rem !important;
+        margin-bottom: 6rem !important;
+    }
+    .card{
+        width: 375px;
+        height: 550px;
+    }
+    .portal-icon{
+        width: 64px;
+        height: 64px;
+    }
+}
+
+/*---------Mobile Views---------*/
+@media only screen and (max-width: 767.99px){
+    /*---------Portal---------*/
+    .cards{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .card{
+        width: 300px !important;
+        height: 400px !important;
+    }
+    .portal-icon{
+        width: 48px;
+        height: 48px;
+    }
+    
+}
