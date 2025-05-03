@@ -43,7 +43,7 @@ const options = {
     },
     datalabels: {
       display: (ctx: any) => ctx.chart.width >= 600,
-      formatter: (value: number, ctx: any) => ctx.chart.data.labels[ctx.dataIndex] || "",
+      formatter: (value: number, ctx: any) => ctx.chart.data.labels[ctx.dataIndex] || value,
       color: 'white',
       align: 'center' as const,
       anchor: 'center' as const,
