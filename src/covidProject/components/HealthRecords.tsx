@@ -26,8 +26,8 @@ const HealthRecords = () => {
     ];
 
     return(
-        <>
-            <div className="" style={{marginTop: "5rem"}}>
+        <div className="health-records-wrapper">
+            <div className="health-records-inner">
                 <div className="widget-buttons">
                     {currentPath === "/covid-project/patients" ?  patientButton  : vaccineButtons}
                 </div>
@@ -37,7 +37,7 @@ const HealthRecords = () => {
                 </div>
 
             </div>
-        </>
+        </div>
     );
 }
 

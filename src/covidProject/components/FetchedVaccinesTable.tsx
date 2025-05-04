@@ -32,7 +32,7 @@ const FetchedVaccinesTable = ({ vaccines, fetchVaccines }: FetchedVaccinesTableP
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
     return (
-        <>
+        <div className="vaccine-table-wrapper">
             <div className="table table-responsive vaccine-table">
                 <table className="table align-middle">
                     <thead>
@@ -70,7 +70,7 @@ const FetchedVaccinesTable = ({ vaccines, fetchVaccines }: FetchedVaccinesTableP
                     </tbody>
                 </table>
             </div>
-            <nav>
+            <nav className="pagination-container">
                 <ul className="pagination justify-content-center">
                     <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
                         <button className="page-link" onClick={() => paginate(currentPage - 1)}> <Icon icon="zondicons:cheveron-left" /> </button>
@@ -87,7 +87,7 @@ const FetchedVaccinesTable = ({ vaccines, fetchVaccines }: FetchedVaccinesTableP
                     </li>
                 </ul>
             </nav>
-        </>
+        </div>
     );
 }
 

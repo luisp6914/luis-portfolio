@@ -1,10 +1,11 @@
 /*Bigger Screens*/
-html,body{
+html,body, #root{
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
 }
+
 /*---------Portal---------*/
 .portal-container{
     display: flex;
@@ -50,8 +51,46 @@ html,body{
 .add-dose-btn:hover, .addSecondDoseBtn:hover{
     background-color: rgb(219, 143, 0) !important;
 }
+.health-records-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 0;
+    height: 100%;
+}
+.health-records-inner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 5rem;
+    min-height: 0;
+    height: 100%;
+}
+
 .patient-vaccine-table{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 0;
+    height: 100%;
     margin: 4rem;
+}
+.patient-table-wrapper, .vaccine-table-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 0;
+    height: 100%;
+}
+.table-responsive.patient-table, .table-responsive.vaccine-table {
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 0;
+    height: 100%;
+}
+.pagination-container {
+    margin-top: auto;
+    padding-top: 1rem;
 }
 .patient-table th, .patient-table td, .vaccine-table th, .vaccine-table td{
     text-align: center;

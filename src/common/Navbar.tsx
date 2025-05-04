@@ -58,7 +58,7 @@ const Navbar = () => {
               About
             </Link>
 
-            <Link to="skills" className={`nav-link ${activeLink === "skills" ? "active" : ""}`} onClick={(e) => handleScroll(e, "skills")}>Skills</Link>
+            <Link to="#skills" className={`nav-link ${activeLink === "skills" ? "active" : ""}`} onClick={(e) => handleScroll(e, "skills")}>Skills</Link>
 
             <Link to="#projects" className={`nav-link ${activeLink === "projects" ? "active" : ""}`} onClick={(e) => handleScroll(e, "projects")} >
               Projects
@@ -134,7 +134,7 @@ const Navbar = () => {
 
   return (
     <>
-      {currentPath === "/" || currentPath === "/home" || currentPath === "/about" || currentPath === "/contact" || currentPath === "/projects" ? homePageNav : 
+      {currentPath === "/" || currentPath === "/home" || currentPath === "/about" || currentPath === "/contact" || currentPath === "/projects" || currentPath === "/skills" ? homePageNav : 
         currentPath === "/covid-project/patients" || currentPath === "/covid-project/vaccines" ? covidNav : 
         currentPath === "/digikey-api" || currentPath === "/pcpartpicker" || currentPath === "/pcpartpicker/cpu" || currentPath === "/pcpartpicker/gpu" || currentPath === "/pcpartpicker/motherboard" || currentPath === "/pcpartpicker/memory" || currentPath === "/pcpartpicker/storage"  || currentPath === "/pcpartpicker/case" || currentPath === "/pcpartpicker/psu" || currentPath === "/pcpartpicker/monitor" ? digiPartPickerNav : ""
       }

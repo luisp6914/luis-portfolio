@@ -45,9 +45,9 @@ const FetchedPatientsTable = ({ patients, fetchPatients }: FetchedPatientsTableP
     }
 
     return (
-        <>
-            <div className="table-responsive patient-table">
-                <table className="table align-middle table-fix">
+        <div className="patient-table-wrapper">
+            <div className="table table-responsive patient-table">
+                <table className="table align-middle">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -82,7 +82,7 @@ const FetchedPatientsTable = ({ patients, fetchPatients }: FetchedPatientsTableP
                 </table>
             </div>
 
-            <nav>
+            <nav className="pagination-container">
                 <ul className="pagination justify-content-center">
                     <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
                         <button className="page-link" onClick={() => paginate(currentPage - 1)}> <Icon icon="zondicons:cheveron-left" /> </button>
@@ -99,7 +99,7 @@ const FetchedPatientsTable = ({ patients, fetchPatients }: FetchedPatientsTableP
                     </li>
                 </ul>
             </nav>
-        </>
+        </div>
     );
 
 }

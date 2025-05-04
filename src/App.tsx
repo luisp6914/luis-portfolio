@@ -18,7 +18,7 @@ import MonitorOptions from './partPickerProject/components/MonitorOptions'
 
 function App() {
   return (
-    <div style={{display: "flex", flexDirection: "column", minHeight: "100vh"}}>
+    <div style={{display: "flex", flexDirection: "column", minHeight: "100vh", height: "100%"}}>
       <Navbar></Navbar>
 
       <div style={{flexGrow: 1}}>

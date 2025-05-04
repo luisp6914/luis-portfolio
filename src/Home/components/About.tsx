@@ -5,12 +5,15 @@ const About = () => {
               <h3>About Me</h3>
               <div>
                   <p>
-                    I have a B.S. in Computer Science with passion for both front-end and back-end development. In a previous role as an AWS team leader, we improved our workflow by implementing AWS Secrets Manager, which bolstered
-                    our security measures. In another role, I developed webpages using HTML, CSS, and JavaScript. Additionally, I assisted with daily
-                    tasks by updating product information for an e-commerce company, ensuring the website's content remained accurate and up-to-date
+                    I have a B.S. in Computer Science with passion for both front-end and back-end development. My portfolio website showcases 
+                    my full-stack development skills through a complete web application. The frontend is built with React and Vite, and is deployed 
+                    on GitHub Pages. I use GitHub Secrets to securely manage environment variables, including API keys and 
+                    backend endpoints. The backend is developed using Java with Spring Boot and Maven to manage dependencies and builds, while MySQL 
+                    serves as the relational database. This setup demonstrates my ability to integrate secure frontend deployment with a robust, 
+                    Java-based backend and persistent data storage.
                   </p>
                   <p>
-                    When I'm not coding, you'll often find me immersed in video games and embracing 
+                    Additionally, when I'm not coding, you'll often find me immersed in video games and embracing 
                     the challenges they offer. I also have a passion for basketball, 
                     whether it's playing a pickup game with friends or watching the latest Lakers Game.
                   </p>
