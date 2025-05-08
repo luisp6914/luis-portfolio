@@ -7,12 +7,13 @@ import AddPatientModal from "./AddPatientModal";
 import FindPatientModal from "./FindPatientModal";
 import FetchedPatientsTable from "./FetchedPatientsTable";
 import FetchedVaccinesTable from "./FetchedVaccinesTable";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 
 const HealthRecords = () => {
     const location = useLocation();
     const currentPath = location.pathname;
-    const {vaccines, fetchVaccines, patients, fetchPatients} = useFetchData();
+    const {vaccines, fetchVaccines, patients, fetchPatients, loading} = useFetchData();
 
     const vaccineButtons = [
         <AddVaccineModal key="addVacineModal" onVaccineAdded={fetchVaccines}/>,
@@ -33,7 +34,15 @@ const HealthRecords = () => {
                 </div>
 
                 <div className="patient-vaccine-table">
-                    {currentPath === "/covid-project/patients" ?  <FetchedPatientsTable fetchPatients={fetchPatients} patients={patients}/>  : <FetchedVaccinesTable vaccines={vaccines} fetchVaccines={fetchVaccines}/>}
+                    {loading ? (
+                        <div className="loading-container">
+                            <Icon className="loading" icon="svg-spinners:blocks-wave" />
+                        </div>
+                    ) : currentPath === "/covid-project/patients" ? (
+                        <FetchedPatientsTable fetchPatients={fetchPatients} patients={patients} />
+                    ) : (
+                        <FetchedVaccinesTable vaccines={vaccines} fetchVaccines={fetchVaccines} />
+                    )}
                 </div>
 
             </div>

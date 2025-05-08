@@ -5,12 +5,19 @@ const About = () => {
               <h3>About Me</h3>
               <div>
                   <p>
-                    I have a B.S. in Computer Science with passion for both front-end and back-end development. My portfolio website showcases 
-                    my full-stack development skills through a complete web application. The frontend is built with React and Vite, and is deployed 
-                    on GitHub Pages. I use GitHub Secrets to securely manage environment variables, including API keys and 
-                    backend endpoints. The backend is developed using Java with Spring Boot and Maven to manage dependencies and builds, while MySQL 
-                    serves as the relational database. This setup demonstrates my ability to integrate secure frontend deployment with a robust, 
-                    Java-based backend and persistent data storage.
+                    I hold a B.S. in Computer Science and have a strong passion for both front-end and back-end development. 
+                    My portfolio website showcases my full-stack development skills through a complete web application. The 
+                    frontend is built with React and Vite, and deployed on GitHub Pages. I use GitHub Secrets to securely manage 
+                    environment variables, such as API keys and backend endpoints.
+                  </p>
+                  <p>
+                    The backend is developed using Java with Spring Boot, and Maven for dependency and build management. 
+                    While the application initially used MySQL, I migrated to PostgreSQL to simplify Docker container deployment 
+                    and avoid the paywall associated with deploying MySQL on platforms like Render.com.
+                  </p>
+                  <p>
+                    This setup highlights my ability to build secure and scalable applications, integrating a modern frontend with 
+                    a robust Java-based backend and persistent PostgreSQL database.
                   </p>
                   <p>
                     Additionally, when I'm not coding, you'll often find me immersed in video games and embracing 

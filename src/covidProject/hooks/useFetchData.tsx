@@ -5,6 +5,7 @@ const useFetchData = () => {
     //Fetched data 
     const [vaccines, setVaccines] = useState([]);
     const [patients, setPatients] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const allVaccinesURL = import.meta.env.VITE_ALL_VACCINES_URL;
     const allPatientsURL = import.meta.env.VITE_ALL_PATIENTS_URL;
@@ -29,11 +30,16 @@ const useFetchData = () => {
     }
 
     useEffect(() => {
-        fetchVaccines();
-        fetchPatients();
-    },[]);
+        const fetchData = async () => {
+            setLoading(true);
+            await Promise.all([fetchVaccines(), fetchPatients()]);
+            setLoading(false);
+        };
 
-    return {vaccines, fetchVaccines, patients, fetchPatients};
+        fetchData();
+    }, []);
+
+    return {vaccines, fetchVaccines, patients, fetchPatients, loading};
 }
 
 export default useFetchData;

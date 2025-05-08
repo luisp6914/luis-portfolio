@@ -88,7 +88,7 @@ const Skills = () => {
               <Icon icon={skill.icon} width={20} height={20} />
               {/* Skill Name */}
               <span className="fs-6 fw-medium">
-                {skill.name} - {Math.round((skill.value / skills.reduce((acc, curr) => acc + curr.value, 0)) * 100)}%
+                {skill.name} - {skill.value}yr. - {Math.round((skill.value / skills.reduce((acc, curr) => acc + curr.value, 0)) * 100)}%
               </span>
             </li>
           ))}
