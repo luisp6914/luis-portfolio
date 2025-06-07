@@ -8,10 +8,10 @@ const TypeWriter = () => {
 
     useEffect(() => {
         const options = {
-            strings: ["A Software Engineer", "Welcome to my website!"],
+            strings: ["A Software Engineer From Los Angeles", "Welcome to my website!"],
             typeSpeed: 75,
-            backSpeed: 55,
-            backDelay: 2000,
+            backSpeed: 65,
+            backDelay: 1000,
             loop: true,
         };
 
