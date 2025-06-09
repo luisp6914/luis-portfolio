@@ -34,6 +34,7 @@ const Projects = () => {
             discription: "This React web app integrates the DigiKey API for searching electronic components by category ID, keyword, or browsing computer equipment categories. It securely fetches data using authentication tokens and keeping credentials secured with GitHub Secrets.",
             path: "/digikey-api", //
             icons: ["simple-icons:digikeyelectronics", "devicon:bootstrap-wordmark", "devicon:react-wordmark", "devicon:typescript", "flowbite:api-key-outline", ], //
+            internal: true,
             finished: true,
         },
         {
@@ -44,6 +45,7 @@ const Projects = () => {
                 "Developed an online system to help a hypothetical local hospital for its COVID vaccination effort. Data was fetched from RESTful API endpoints. The system keeps track of adding a new patient/vaccine, updating patient/vaccine date, or searching for patient/vaccine.",
             path: "/covid-project", //
             icons: ["devicon:react-wordmark", "devicon:typescript","devicon:java-wordmark","devicon:spring-wordmark","logos:docker-icon", "streamline-ultimate:coding-apps-website-web-dev-api-cloud"], //
+            internal: true,
             finished: true,
         },
         {
@@ -54,6 +56,7 @@ const Projects = () => {
                 "Developed an interface where users can select different PC parts from a given list. The list of computer components are fetched from RESTful API endpoints. Endpoints handles the selection or removal of PC part, then price for the selected PC components are computed and displayed.",
             path: "/pcpartpicker", //
             icons: ["devicon:react-wordmark", "devicon:typescript","devicon:java-wordmark","devicon:spring-wordmark","logos:docker-icon", "streamline-ultimate:coding-apps-website-web-dev-api-cloud"], //
+            internal: true,
             finished: true,
         },
         {
@@ -64,6 +67,7 @@ const Projects = () => {
                 "Developed an interface where users can select two images and have them merged and displayed. The goal of this project was to use DOM manipulation by selected exisisting elements, manipulating them, then create and display a new element.",
             path: "https://luisp6914.github.io/Merge-Images/", //
             icons: ["logos:html-5", "vscode-icons:file-type-css", "logos:javascript"], //
+            internal: false,
             finished: true,
         }
         // {
@@ -108,7 +112,14 @@ const Projects = () => {
                                     <Icon key={index} icon={stack} className='stack-icon'></Icon>
                                 ))}
                             </div>
-                            <Link className={`btn btn-primary rounded-pill try-it ${!project.finished ? 'disabled' : ''}`} to={project.path}>Try {project.name} Project </Link>
+                            {
+                                project.internal ? (
+                                    <Link className={`btn btn-primary rounded-pill try-it ${!project.finished ? 'disabled' : ''}`} to={project.path}>Try {project.name} Project </Link>
+                                ) : (
+                                    <a className={`btn btn-primary rounded-pill try-it ${!project.finished ? 'disabled' : ''}`} href={project.path}>Try {project.name} Project </a>
+                                )
+                            }
+                            
                         </div>
                     </div>
                 ))}
