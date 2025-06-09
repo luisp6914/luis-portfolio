@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import "../../styles/partPicker-project.css"
 
 interface UserPicks{
     pcCase : PcCase;

@@ -4,6 +4,7 @@ import Contact from "./Contact";
 import Home from "./Home";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import "../../styles/homepage.css"
 
 // @ts-ignore
 import Toast from "bootstrap/js/dist/toast.js";

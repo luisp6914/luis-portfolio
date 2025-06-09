@@ -8,6 +8,7 @@ import FindPatientModal from "./FindPatientModal";
 import FetchedPatientsTable from "./FetchedPatientsTable";
 import FetchedVaccinesTable from "./FetchedVaccinesTable";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import "../../styles/covid-project.css"
 
 
 const HealthRecords = () => {

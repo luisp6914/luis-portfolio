@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import qs from "qs";
+import '../../styles/digiKey-project.css'
 
 interface Category{
     CategoryId: number;
@@ -207,7 +208,7 @@ const DigiContent = () => {
                                 <h1 style={{textAlign: "center", marginBottom: "2rem"}}>{categories.Name} </h1>
                                 <div className="row row-cols-12 row-cols-sm-12 row-cols-md-4 row-cols-lg-2 category-cards">
                                     {categories.Children.map(category => (
-                                        <div className="card " style={{ width: '500px', height: '350px'}} key={category.CategoryId}>
+                                        <div className="card digi-card" style={{width: '500px', height: '350px'}} key={category.CategoryId}>
                                             
                                             <div className="card-body card-data">
                                                 <h2 className="card-title" style={{whiteSpace: "nowrap", overflowX: "auto", overflowY: "hidden" , maxWidth: "100%"}}>{category.Name}</h2>

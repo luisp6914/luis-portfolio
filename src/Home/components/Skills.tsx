@@ -82,8 +82,7 @@ const Skills = () => {
           {skills.map((skill, i) => (
             <li key={i} className="d-flex align-items-center gap-2 text-black">
               {/* Colored Bullet */}
-              <span
-                style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: skill.color, }}/>
+              <span style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: skill.color, }}/>
               {/* Skill Icon */}
               <Icon icon={skill.icon} width={20} height={20} />
               {/* Skill Name */}
