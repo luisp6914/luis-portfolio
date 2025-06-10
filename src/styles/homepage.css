@@ -49,7 +49,9 @@ html,body{
     display: flex;
     gap: 2rem;
 }
-
+.img-thumbnail{
+    border: none !important;
+}
 .img-me{
     border: none;
     
@@ -81,7 +83,12 @@ html,body{
     background-color: #0D6EFD; /* Color of the underline */
 }
 
-/*Pie Chart*/
+/*Pie Chart and skills*/
+.skills-title{
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+}
 .pie-chart-container{
     display: flex;
     flex-direction: row;
@@ -138,7 +145,7 @@ html,body{
     padding: 10px;
     gap: 45px;
 }
-#projects h1{
+#projects h2{
     text-align: center;
     font-size: 48px;
     font-weight: bold;

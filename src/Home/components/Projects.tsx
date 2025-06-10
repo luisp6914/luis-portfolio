@@ -94,7 +94,7 @@ const Projects = () => {
 
     return (
         <div className="container">
-            <h1>Projects</h1>
+            <h2 className="mb-5">Projects</h2>
             <div className="projects row">
                 {projects.map((project, index) => (
                     <div key={index} className="card project col-md-4 fade-in " style={{ width: '400px', height: '450px' }}>

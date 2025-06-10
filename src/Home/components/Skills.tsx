@@ -70,30 +70,32 @@ const options = {
 
 const Skills = () => {
   return (
-    <div className="align-items-start rounded pie-chart-container">
-      {/* Pie Chart */}
-      <div className="pie-chart">
-        <Pie data={data} options={options} />
+    <>
+      <h2 className="skills-title mb-5">Skills</h2>
+      <div className="align-items-start rounded pie-chart-container">
+        {/* Pie Chart */}
+        <div className="pie-chart">
+          <Pie data={data} options={options} />
+        </div>
+        {/* Custom Legend */}
+        <div className="custom-legend">
+          <ul className="list-unstyled ">
+            {skills.map((skill, i) => (
+              <li key={i} className="d-flex align-items-center gap-2 text-black">
+                {/* Colored Bullet */}
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: skill.color, }}/>
+                {/* Skill Icon */}
+                <Icon icon={skill.icon} width={20} height={20} />
+                {/* Skill Name */}
+                <span className="fs-6 fw-medium">
+                  {skill.name} - {skill.value}yr. - {Math.round((skill.value / skills.reduce((acc, curr) => acc + curr.value, 0)) * 100)}%
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-
-      {/* Custom Legend */}
-      <div className="custom-legend">
-        <ul className="list-unstyled ">
-          {skills.map((skill, i) => (
-            <li key={i} className="d-flex align-items-center gap-2 text-black">
-              {/* Colored Bullet */}
-              <span style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: skill.color, }}/>
-              {/* Skill Icon */}
-              <Icon icon={skill.icon} width={20} height={20} />
-              {/* Skill Name */}
-              <span className="fs-6 fw-medium">
-                {skill.name} - {skill.value}yr. - {Math.round((skill.value / skills.reduce((acc, curr) => acc + curr.value, 0)) * 100)}%
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    </>
   );
 }
 

@@ -33,7 +33,7 @@ const About = () => {
             </div>
               
             <div className="profile">         
-              <img src="ghibli-img.png" className="img-thumbnail img-me" alt="Image of me"></img>
+              <img src="ghibli-img.png" className="img-thumbnail img-me" alt="Image of me" loading="lazy"></img>
             </div>
 
         </div>
