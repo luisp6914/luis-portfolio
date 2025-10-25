@@ -21,6 +21,7 @@ const FetchedPatientsTable = ({ patients, fetchPatients }: FetchedPatientsTableP
     const [currentPage, setCurrentPage] = useState(1);
     const patientsPerPage = 15;
 
+    console.log(patients);
     //Calculate total pages 
     const totalPages = Math.ceil(patients.length / patientsPerPage);
 

@@ -1,0 +1,52 @@
+name: Container Awake
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # runs every 10 minutes
+  workflow_dispatch:          # allow manual runs from the Actions tab
+
+# This workflow doesn't need repo write access; lock it down.
+permissions: {}
+
+concurrency:
+  group: keep-awake
+  cancel-in-progress: true    # avoid overlapping runs if GitHub delays a scheduled start
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5        # hard cap on runner time to protect your minutes
+    steps:
+      - name: Randomize delay (0–300s)
+        id: jitter
+        run: |
+          JITTER=$((RANDOM % 301))  # 0..300 seconds (0–5 minutes)
+          echo "Sleeping ${JITTER}s so the effective cadence is 10–15 minutes."
+          echo "jitter=${JITTER}" >> "$GITHUB_OUTPUT"
+          sleep "$JITTER"
+
+      - name: Ping health endpoint
+        env:
+          VITE_ALL_PATIENTS_URL: ${{ secrets.VITE_ALL_PATIENTS_URL }}
+        run: |
+          if [ -z "$VITE_ALL_PATIENTS_URL" ]; then
+            echo "Missing secret URL"
+            exit 1
+          fi
+
+          # Make a quiet, bounded request with a friendly UA and light retries.
+          STATUS=$(
+            curl -s -o /dev/null \
+                 -w "%{http_code}" \
+                 --max-time 10 \
+                 --retry 2 \
+                 --retry-delay 5 \
+                 -H "User-Agent: gh-actions-keepalive/1.0" \
+                 "$VITE_ALL_PATIENTS_URL"
+          )
+
+          echo "HTTP status: $STATUS"
+          case "$STATUS" in
+            2*|3*) echo "✅ Server responded. Container  awake." ;;
+            *)     echo "⚠️ Non-2xx/3xx response."; exit 1 ;;
+          esac

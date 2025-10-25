@@ -64,14 +64,14 @@ const HomePage = () => {
 
     return (
         <>
-            <div ref={toastRef} className="toast position-fixed bottom-0 end-0 p-3 mb-2 me-2 align-items-center text-white bg-primary border-0 auto-hide" role="alert" aria-live="assertive" aria-atomic="true">
+            {/* <div ref={toastRef} className="toast position-fixed bottom-0 end-0 p-3 mb-2 me-2 align-items-center text-white bg-primary border-0 auto-hide" role="alert" aria-live="assertive" aria-atomic="true">
                 <div className="d-flex">
                     <div className="toast-body">
                         <b>Please note:</b> The Covid and PC Part Picker Project may load slowly initially as the Render container service starts up. Usually around 3 minutes.
                     </div>
                     <button type="button" className="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
-            </div>
+            </div> */}
             <div id="home"> <Home /> </div>
             <div id="about" className="container"> <About /> </div>
             <div id="skills" className="container"> <Skills /> </div>
