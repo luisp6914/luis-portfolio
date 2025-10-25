@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5        # hard cap on runner time to protect your minutes
     steps:
-      - name: Randomize delay (0–300s)
+      - name: Randomize delay (0–180s)
         id: jitter
         run: |
-          JITTER=$((RANDOM % 301))  # 0..300 seconds (0–5 minutes)
+          JITTER=$((RANDOM % 181))  # 0..181 seconds (0–3 minutes)
           echo "Sleeping ${JITTER}s so the effective cadence is 10–15 minutes."
           echo "jitter=${JITTER}" >> "$GITHUB_OUTPUT"
           sleep "$JITTER"
@@ -28,6 +28,7 @@ jobs:
       - name: Ping health endpoint
         env:
           VITE_ALL_PATIENTS_URL: ${{ secrets.VITE_ALL_PATIENTS_URL }}
+        continue-on-error: true
         run: |
           if [ -z "$VITE_ALL_PATIENTS_URL" ]; then
             echo "Missing secret URL"
