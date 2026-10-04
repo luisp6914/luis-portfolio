@@ -6,6 +6,8 @@ interface Patient {
     id: number;
     firstName: string;
     lastName: string;
+    gender: string;
+    dateOfBirth: string;
     vaccineName: string;
     vaccineDosesRequired: number;
     dose1Date: string;

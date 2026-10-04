@@ -11,7 +11,7 @@ import Toast from "bootstrap/js/dist/toast.js";
 import axios from "axios";
 
 const HomePage = () => {
-    const toastRef = useRef<HTMLDivElement>(null);
+    const dialogRef = useRef<HTMLDialogElement>(null);
 
     const allVaccinesURL = import.meta.env.VITE_ALL_VACCINES_URL;
     const allPatientsURL = import.meta.env.VITE_ALL_PATIENTS_URL;
@@ -53,10 +53,8 @@ const HomePage = () => {
     }
 
     useEffect(() => {
-        if (toastRef.current) {
-            const toast = new Toast(toastRef.current);
-            toast.show();
-        }
+        dialogRef.current?.showModal();
+        document.body.style.overflow = "hidden";
         fetchPatients();
         fetchUserPicks();
         fetchVaccines();
@@ -72,6 +70,27 @@ const HomePage = () => {
                     <button type="button" className="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
             </div> */}
+            <dialog ref={dialogRef} className="border-0 rounded-3 shadow-lg p-0">
+                <div className="card border-0" style={{ width: "400px" }}>
+                
+                <div className="card-body p-4">
+                    <h5 className="card-title fw-semibold mb-3">
+                        Website Moved
+                    </h5>
+
+                    <p className="text-secondary mb-4">
+                        The portfolio website has moved to Render.com hosting services. Please visit the new website
+                    </p>
+
+                    <div className="d-flex justify-content-end">
+                        <a href="https://vanilla-react-portfolio-1.onrender.com/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                            New Website →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            </dialog>
             <div id="home"> <Home /> </div>
             <div id="about" className="container"> <About /> </div>
             <div id="skills" className="container"> <Skills /> </div>
